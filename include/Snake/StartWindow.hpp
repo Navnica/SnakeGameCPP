@@ -1,0 +1,21 @@
+#include "SFML/Graphics.hpp"
+#include "Snake/Scene.hpp"
+#include "iostream"
+
+namespace snake{
+
+    class StartWindow{
+    public:
+        StartWindow();
+
+    private:
+        sf::RenderWindow *window;
+        std::vector<Scene> scenes;
+
+        void startGameLoop();
+        void settingWindow();
+        void drawScenes();
+        void gameLogic();
+    };
+
+}
