@@ -1,10 +1,14 @@
+#pragma once
+
 #include "Snake/GameObject.hpp"
+#include "iostream"
 
 namespace Ui{
-    class Button {
+    class Button : public snake::GameObject{
     public:
-        void logic();
+        Button();
 
+        void logic();
     private:
         void setup();
     };

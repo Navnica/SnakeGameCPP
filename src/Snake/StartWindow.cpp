@@ -13,6 +13,8 @@ void StartWindow::settingWindow(){
 
     scenes.push_back(Scene(window));
 
+    scenes[scenes.size()-1].addObject(Ui::Button());
+
 }
 
 void StartWindow::startGameLoop() {

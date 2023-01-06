@@ -1,7 +1,10 @@
 #include "Ui/Button.hpp"
-#include "SFML/Graphics.hpp"
 
 using namespace Ui;
+
+Button::Button() {
+    setup();
+}
 
 void Button::setup() {
 
