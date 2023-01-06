@@ -13,12 +13,15 @@ void StartWindow::settingWindow(){
 
     scenes.push_back(Scene(window));
 
-    scenes[scenes.size()-1].addObject(Ui::Button());
+    Ui::Button nb;
 
+    nb.setTextureObject("../images/button.png");
+
+
+    scenes[scenes.size()-1].addObject(nb);
 }
 
 void StartWindow::startGameLoop() {
-
     while (window->isOpen()){
         sf::Event _event;
 

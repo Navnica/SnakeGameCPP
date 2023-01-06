@@ -9,6 +9,7 @@ namespace Ui{
         Button();
 
         void logic();
+
     private:
         void setup();
     };

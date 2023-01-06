@@ -8,8 +8,10 @@ namespace snake{
         std::string name;
 
         void logic();
+        void setTextureObject(std::string texturePath);
 
     private:
+        sf::Texture *textureObject;
         void setup();
     };
 }
