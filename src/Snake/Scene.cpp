@@ -26,9 +26,10 @@ void Scene::logicObjects(){
         gameObjects[i].logic();
 }
 
-GameObject Scene::findObjectByName(std::string name) {
+GameObject *Scene::findObjectByName(std::string name) {
     for (int i = 0; i != gameObjects.size(); i++)
         if(gameObjects[i].name == name)
-            return gameObjects[i];
+            return &gameObjects[i];
 
+    return NULL;
 }

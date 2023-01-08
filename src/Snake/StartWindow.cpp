@@ -15,7 +15,7 @@ void StartWindow::settingWindow(){
 
     Ui::Button nb;
 
-    nb.setTextureObject("../images/button.png");
+    nb.setObjectTexture("../images/button.png");
 
 
     scenes[scenes.size()-1].addObject(nb);

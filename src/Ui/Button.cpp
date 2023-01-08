@@ -11,5 +11,7 @@ void Button::setup() {
 }
 
 void Button::logic() {
-
+    std::cout << "fuck";
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+    }
 }

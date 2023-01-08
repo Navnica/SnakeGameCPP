@@ -1,16 +1,21 @@
 #include "Snake/GameObject.hpp"
+#include "iostream"
 
 using namespace snake;
+
+GameObject::GameObject(){
+    GameObject::setup();
+};
 
 void GameObject::setup(){
 
 }
 
-void GameObject::logic() {
+void GameObject::logic(){
 
 }
 
-void GameObject::setTextureObject(std::string texturePath) {
+void GameObject::setObjectTexture(std::string texturePath) {
     textureObject = new sf::Texture();
     textureObject->loadFromFile(texturePath);
 

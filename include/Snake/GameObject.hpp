@@ -5,13 +5,15 @@
 namespace snake{
     class GameObject : public sf::RectangleShape{
     public:
+        GameObject();
+
         std::string name;
 
-        void logic();
-        void setTextureObject(std::string texturePath);
+        virtual void logic();
+        void setObjectTexture(std::string texturePath);
 
     private:
         sf::Texture *textureObject;
-        void setup();
+        virtual void setup();
     };
 }

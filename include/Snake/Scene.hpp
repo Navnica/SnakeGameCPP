@@ -11,7 +11,7 @@ namespace snake{
 
         void exScene();
         void addObject(GameObject newObject);
-        GameObject findObjectByName(std::string name);
+        GameObject *findObjectByName(std::string name);
 
     private:
         sf::RenderWindow *window;
