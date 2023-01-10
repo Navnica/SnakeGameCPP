@@ -7,7 +7,7 @@ Scene::Scene(sf::RenderWindow *win) {
     window = win;
 }
 
-void Scene::addObject(GameObject *newObject) {
+void Scene::addObject(GameObjectAbstract *newObject) {
     gameObjects.push_back(newObject);
 }
 
@@ -25,6 +25,7 @@ void Scene::logicObjects(){
     for (int i = 0; i != gameObjects.size(); i++)
         gameObjects[i]->logic();
 }
+
 
 /*
 GameObject *Scene::findObjectByName(std::string name) {

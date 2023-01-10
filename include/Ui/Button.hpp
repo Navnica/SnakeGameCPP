@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Snake/GameObject.hpp"
+#include "Snake/Scene.hpp"
 #include "iostream"
 
 namespace Ui{

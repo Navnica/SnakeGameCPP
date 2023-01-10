@@ -23,3 +23,7 @@ void GameObject::setObjectTexture(std::string texturePath) {
     setTexture(textureObject);
     setSize(sf::Vector2f(128, 128));
 }
+
+void GameObject::setFatherScene(snake::Scene *scene) {
+    fatherScene = scene;
+}
