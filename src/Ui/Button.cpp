@@ -2,16 +2,13 @@
 
 using namespace Ui;
 
-Button::Button() {
-    setup();
-}
 
 void Button::setup() {
 
 }
 
+
 void Button::logic() {
-    std::cout << "fuck";
-    if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-    }
+    std::cout << sf::Mouse::getPosition().x << " ";
+    std::cout << sf::Mouse::getPosition().y << "\n";
 }

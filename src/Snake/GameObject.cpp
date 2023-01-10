@@ -11,8 +11,9 @@ void GameObject::setup(){
 
 }
 
-void GameObject::logic(){
 
+void GameObject::logic(){
+    std::cout << "old logic" << std::endl;
 }
 
 void GameObject::setObjectTexture(std::string texturePath) {

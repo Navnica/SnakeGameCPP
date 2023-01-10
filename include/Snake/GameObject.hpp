@@ -14,6 +14,6 @@ namespace snake{
 
     private:
         sf::Texture *textureObject;
-        virtual void setup();
+        void setup();
     };
 }

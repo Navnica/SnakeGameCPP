@@ -4,12 +4,12 @@
 #include "iostream"
 
 namespace Ui{
-    class Button : public snake::GameObject{
+    class Button : public virtual snake::GameObject{
     public:
-        Button();
-
         void logic();
+
     private:
         void setup();
+
     };
 }

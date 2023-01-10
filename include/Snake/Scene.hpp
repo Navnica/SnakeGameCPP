@@ -10,15 +10,16 @@ namespace snake{
         explicit Scene(sf::RenderWindow *window);
 
         void exScene();
-        void addObject(GameObject newObject);
-        GameObject *findObjectByName(std::string name);
+        void addObject(GameObject *newObject);
+     //   GameObject *findObjectByName(std::string name);
 
     private:
         sf::RenderWindow *window;
-        std::vector <GameObject> gameObjects;
+        std::vector <GameObject*> gameObjects;
 
         void drawScene();
         void logicObjects();
+
     };
 
 }
