@@ -15,7 +15,7 @@ add_executable(snake
         src/Snake/GameObjectAbstract.cpp
         src/Snake/SceneAbstract.cpp
         src/Snake/MainWindow.cpp
-        src/Snake/Snake.cpp)
+        src/Snake/SnakeHead.cpp)
 
 include_directories(include)
 

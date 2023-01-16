@@ -15,7 +15,6 @@ namespace snake{
 
     private:
         sf::Texture *textureObject;
-        virtual void setup();
 
     protected:
         Scene *fatherScene;

@@ -17,7 +17,14 @@ void MainWindow::settingWindow(){
     Scene* newScene = new Scene(window);
     scenes.push_back(*newScene);
     
-    Snake sn* = new Snake(newScene);
+    SnakeHead* sn = new SnakeHead(newScene);
+    sn->setPosition(sf::Vector2<float>(
+            (window->getSize().x / 2) - (sn->getSize().x / 2),
+            (window->getSize().y / 2) - (sn->getSize().y / 2)
+
+            ));
+
+    newScene->addObject(sn);
     
 }
 
