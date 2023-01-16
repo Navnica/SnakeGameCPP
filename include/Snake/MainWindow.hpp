@@ -7,10 +7,9 @@
 
 namespace snake{
 
-    class StartWindow{
+    class MainWindow{
     public:
-        StartWindow();
-        ~StartWindow();
+        MainWindow();
 
     private:
         sf::RenderWindow *window;

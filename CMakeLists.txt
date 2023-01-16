@@ -11,7 +11,10 @@ add_executable(snake
         src/Snake/Scene.cpp
         src/Snake/StartWindow.cpp
         src/Snake/GameObject.cpp
-        src/Ui/Button.cpp src/Snake/GameObjectAbstact.cpp)
+        src/Ui/Button.cpp
+        src/Snake/GameObjectAbstract.cpp
+        src/Snake/SceneAbstract.cpp
+        src/Snake/MainWindow.cpp)
 
 include_directories(include)
 

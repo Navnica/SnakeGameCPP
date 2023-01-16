@@ -1,23 +1,22 @@
 #pragma once
 
-#include "Snake/GameObjectAbstact.hpp"
+#include "Snake/GameObjectAbstract.hpp"
 #include "Snake/Scene.hpp"
 
 namespace snake{
     class GameObject : public snake::GameObjectAbstract{
     public:
-        GameObject();
+        explicit GameObject(Scene *scene);
 
-        std::string name;
-        virtual void logic();
+        void logic() override;
 
-        void setObjectTexture(std::string texturePath);
-        void setFatherScene(snake::Scene *scene);
+        virtual void setObjectTexture(std::string texturePath);
+        virtual void setObjectName(std::string newName);
 
     private:
         sf::Texture *textureObject;
-        snake::Scene *fatherScene;
 
-        void setup();
+    protected:
+        Scene *fatherScene;
     };
 }

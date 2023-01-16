@@ -3,17 +3,13 @@
 
 using namespace snake;
 
-GameObject::GameObject(){
-    GameObject::setup();
+GameObject::GameObject(Scene *scene){
+    fatherScene = scene;
 };
-
-void GameObject::setup(){
-
-}
 
 
 void GameObject::logic(){
-    std::cout << "old logic" << std::endl;
+
 }
 
 void GameObject::setObjectTexture(std::string texturePath) {
@@ -24,6 +20,6 @@ void GameObject::setObjectTexture(std::string texturePath) {
     setSize(sf::Vector2f(128, 128));
 }
 
-void GameObject::setFatherScene(snake::Scene *scene) {
-    fatherScene = scene;
+void GameObject::setObjectName(std::string newName) {
+    name = newName;
 }

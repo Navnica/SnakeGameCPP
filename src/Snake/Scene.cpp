@@ -1,14 +1,17 @@
 #include "Snake/Scene.hpp"
+#include "typeinfo"
 
 using namespace snake;
 
 Scene::Scene(sf::RenderWindow *win) {
-    gameObjects.reserve(0);
+    gameObjects = new std::vector<GameObjectAbstract*>;
+    gameObjects->reserve(0);
     window = win;
 }
 
 void Scene::addObject(GameObjectAbstract *newObject) {
-    gameObjects.push_back(newObject);
+
+    gameObjects->push_back(newObject);
 }
 
 void Scene::exScene() {
@@ -17,21 +20,23 @@ void Scene::exScene() {
 }
 
 void Scene::drawScene() {
-    for (int i = 0; i != gameObjects.size(); i++)
-        window->draw(*gameObjects[i]);
+    for (int i = 0; i != gameObjects->size(); i++)
+        window->draw(*gameObjects->at(i));
 }
 
 void Scene::logicObjects(){
-    for (int i = 0; i != gameObjects.size(); i++)
-        gameObjects[i]->logic();
+    for (int i = 0; i != gameObjects->size(); i++)
+        gameObjects->at(i)->logic();
+
 }
 
 
-/*
-GameObject *Scene::findObjectByName(std::string name) {
-    for (int i = 0; i != gameObjects.size(); i++)
-        if(gameObjects[i].name == name)
-            return &gameObjects[i];
+GameObjectAbstract* Scene::findObjectByName(std::string tname) {
+    for (int i = 0; i != gameObjects->size(); i++){
+        if(gameObjects->at(i)->name == tname)
+            return gameObjects->at(i);}
 
     return NULL;
-}*/
+}
+
+

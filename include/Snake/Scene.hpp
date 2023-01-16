@@ -1,8 +1,8 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
-#include "Snake/GameObjectAbstact.hpp"
-
+#include "Snake/GameObjectAbstract.hpp"
+#include "iostream"
 
 namespace snake{
 
@@ -14,9 +14,9 @@ namespace snake{
         void addObject(GameObjectAbstract *newObject);
         sf::RenderWindow *window;
 
-     //   GameObject *findObjectByName(std::string name);
+        GameObjectAbstract* findObjectByName(std::string name);
     private:
-        std::vector <GameObjectAbstract*> gameObjects;
+        std::vector <GameObjectAbstract*> *gameObjects;
 
         void drawScene();
         void logicObjects();
