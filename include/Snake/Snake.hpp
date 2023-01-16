@@ -3,8 +3,16 @@
 
 namespace snake{
     class Snake : public snake::GameObject{
-        public:
-            explicit Snake(Scene *scene);
+    public:
+        int lenght = 1;
+    
+        Snake(Scene *scene);
+    
+        void logic();
+        
+    private:
+        void setup();
+        
     };
 }
 

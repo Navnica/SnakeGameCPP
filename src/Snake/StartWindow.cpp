@@ -8,7 +8,7 @@ StartWindow::StartWindow() {
 }
 
 StartWindow::~StartWindow() {
-    std::cout << "d";
+    
 }
 
 void StartWindow::settingWindow(){

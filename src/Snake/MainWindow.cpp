@@ -1,5 +1,6 @@
 #include "Snake/MainWindow.hpp"
 
+
 using namespace snake;
 
 MainWindow::MainWindow() {
@@ -15,6 +16,9 @@ void MainWindow::settingWindow(){
 
     Scene* newScene = new Scene(window);
     scenes.push_back(*newScene);
+    
+    Snake sn* = new Snake(newScene);
+    
 }
 
 void MainWindow::startGameLoop() {

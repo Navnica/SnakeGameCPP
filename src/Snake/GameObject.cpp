@@ -5,8 +5,13 @@ using namespace snake;
 
 GameObject::GameObject(Scene *scene){
     fatherScene = scene;
+    setup();
 };
 
+
+void GameObject::setup(){
+    
+}
 
 void GameObject::logic(){
 
