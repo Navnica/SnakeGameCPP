@@ -30,7 +30,15 @@ bool Button::isPressedDown() {
     return (pre == 0) & (isPressed() == 1);
 }
 
+void Button::setExecuteDef(std::function<void()> f) {
+    exDef = std::move(f);
+}
+
 void Button::logic() {
+    if(isPressedUp()){
+        exDef();
+    }
+
     if(isPressed()){
         setFillColor(sf::Color(255, 255, 255, 210));
         pre = 1;

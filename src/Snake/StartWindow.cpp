@@ -12,13 +12,20 @@ StartWindow::~StartWindow() {
 }
 
 void StartWindow::settingWindow(){
-    window = new sf::RenderWindow(sf::VideoMode(800, 600), "Main menu", sf::Style::Close);
+    window = new sf::RenderWindow(sf::VideoMode(800, 600), "Snake", sf::Style::Close);
     window->setFramerateLimit(60);
 
     scenes.reserve(0);
 
     Scene* newScene = new Scene(window);
-    scenes.push_back(*newScene);
+    Scene* gameScene = new Scene(window);
+    Scene* menuScene = new Scene(window);
+
+    scenes.push_back(newScene);
+    scenes.push_back(gameScene);
+    scenes.push_back(menuScene);
+
+    openScene = newScene;
 
     Ui::Button* nb = new Ui::Button(newScene);
     nb->setObjectName("Button");
@@ -29,8 +36,25 @@ void StartWindow::settingWindow(){
             );
 
     nb->setPosition(correctPos);
+    nb->setExecuteDef([this](){ changeScene(1);});
 
-    scenes[scenes.size()-1].addObject(nb);
+
+    SnakeHead* snakeHead = new SnakeHead(gameScene);
+
+    Ui::Button* pauseButton = new Ui::Button(menuScene);
+    pauseButton->setObjectName("PauseButton");
+    pauseButton->setObjectTexture("../images/button.png");
+    pauseButton->setSize(sf::Vector2f(64, 64));
+    pauseButton->setPosition(sf::Vector2<float>(
+            (window->getSize().x / 2) - (pauseButton->getSize().x / 2),
+            (window->getSize().y / 2) - (pauseButton->getSize().y / 2)));
+
+    pauseButton->setExecuteDef([this](){ changeScene(1);});
+
+
+    newScene->addObject(nb);
+    gameScene->addObject(snakeHead);
+    menuScene->addObject(pauseButton);
 }
 
 void StartWindow::startGameLoop() {
@@ -43,25 +67,23 @@ void StartWindow::startGameLoop() {
 
                 window->clear();
                 gameLogic();
-                drawScenes();
+                drawOpenScene();
                 window->display();
 
     }
 }
 
-void StartWindow::drawScenes() {
-    int i = 0;
+void StartWindow::drawOpenScene(){
+    openScene->exScene();
+};
 
-    do {
-        scenes[i].exScene();
-    } while (i != scenes.size()-1);
+void StartWindow::changeScene(int sceneId) {
+    openScene = scenes[sceneId];
 }
 
 void StartWindow::gameLogic() {
-
-    Ui::Button* b = dynamic_cast<Ui::Button *>(scenes[0].findObjectByName("Button"));
-
-    if(b->isPressedUp())
-        window->close();
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)){
+        changeScene(2);
+    }
 }
 
